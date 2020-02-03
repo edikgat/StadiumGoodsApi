@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount GrapeSwaggerRails::Engine, at: '/documentation'
+  mount Api::V1 => '/'
+  root to: redirect('/api/v1/social_networks')
 end
