@@ -1,11 +1,14 @@
-class CuncurrencyRequestMaker
-  attr_reader :result, 
-              :hydra, 
-              :url, 
-              :max_restarts, 
-              :concurrency_level
+# frozen_string_literal: true
 
-  def initialize(url, max_restarts: 30, concurrency_level: 10)
+class CuncurrencyRequestMaker
+  attr_reader :result,
+              :hydra,
+              :url,
+              :max_restarts,
+              :concurrency_level,
+              :restarts
+
+  def initialize(url, max_restarts:, concurrency_level:)
     @url = url
     @hydra = Typhoeus::Hydra.new
     @restarts = 0
@@ -58,7 +61,9 @@ class CuncurrencyRequestMaker
   end
 
   def parsed_response(response)
-    JSON.parse(response.body) rescue nil
+    JSON.parse(response.body)
+  rescue StandardError
+    nil
   end
 
   def restart_counter_mutex

@@ -1,11 +1,15 @@
-class ApiCheck::Facebook < ApiCheck::Base
-  private
+# frozen_string_literal: true
 
-  def cache_key
-    :facebook
-  end
+module ApiCheck
+  class Facebook < ApiCheck::Base
+    private
 
-  def url
-    "https://takehome.io/facebook"
+    def cache_key
+      :facebook
+    end
+
+    def url
+      'https://takehome.io/facebook'
+    end
   end
 end

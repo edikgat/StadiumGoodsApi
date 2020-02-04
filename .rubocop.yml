@@ -1,0 +1,61 @@
+Layout/ArgumentAlignment:
+  Exclude:
+    - 'bin/webpack'
+    - 'bin/webpack-dev-server'
+
+Layout/EmptyLineAfterGuardClause:
+  Exclude:
+    - 'bin/bundle'
+
+Layout/MultilineOperationIndentation:
+  Exclude:
+    - 'bin/bundle'
+
+Metrics/AbcSize:
+  Max: 17
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/MethodLength:
+  Max: 13
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'bin/bundle'
+    - 'bin/rails'
+    - 'bin/rake'
+
+Style/IfUnlessModifier:
+  Exclude:
+    - 'bin/bundle'
+
+Style/PerlBackrefs:
+  Exclude:
+    - 'bin/bundle'
+
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
+
+Style/SpecialGlobalVars:
+  EnforcedStyle: use_perl_names
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'bin/bundle'

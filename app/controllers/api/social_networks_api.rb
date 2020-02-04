@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
-class Api::SocialNetworksApi < Grape::API
-  format :json
+module Api
+  class SocialNetworksApi < Grape::API
+    format :json
 
-  desc 'Loads latest information from social networks'
-  get '' do
-    SocialNetworksSerializer.serialize(
-      SocialNetworksChecker.check)
+    desc 'Loads latest information from social networks'
+    get '' do
+      status 200
+      SocialNetworksSerializer.serialize(
+        SocialNetworksChecker.check
+      )
+    end
   end
 end

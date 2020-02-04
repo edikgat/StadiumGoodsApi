@@ -1,11 +1,15 @@
-class ApiCheck::Twitter < ApiCheck::Base
-  private
+# frozen_string_literal: true
 
-  def cache_key
-    :twitter
-  end
+module ApiCheck
+  class Twitter < ApiCheck::Base
+    private
 
-  def url
-    "https://takehome.io/twitter"
+    def cache_key
+      :twitter
+    end
+
+    def url
+      'https://takehome.io/twitter'
+    end
   end
 end

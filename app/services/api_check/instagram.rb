@@ -1,11 +1,15 @@
-class ApiCheck::Instagram < ApiCheck::Base
-  private
+# frozen_string_literal: true
 
-  def cache_key
-    :instagram
-  end
+module ApiCheck
+  class Instagram < ApiCheck::Base
+    private
 
-  def url
-    "https://takehome.io/instagram"
+    def cache_key
+      :instagram
+    end
+
+    def url
+      'https://takehome.io/instagram'
+    end
   end
 end

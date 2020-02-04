@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SocialNetworksSerializer
   attr_reader :social_networks_checker
 
@@ -10,8 +12,16 @@ class SocialNetworksSerializer
   end
 
   def serialize
-    { twitter: [social_networks_checker.twitter_result.to_a], 
-      facebook: [social_networks_checker.facebook_result.to_a],
-      instagram: [social_networks_checker.instagram_result.to_a] }
+    { twitter: array_result(social_networks_checker.twitter_result),
+      facebook: array_result(social_networks_checker.facebook_result),
+      instagram: array_result(social_networks_checker.instagram_result) }
+  end
+
+  private
+
+  def array_result(result)
+    result.to_a
+  rescue StandardError
+    []
   end
 end

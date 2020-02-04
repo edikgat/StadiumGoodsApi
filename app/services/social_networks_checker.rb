@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SocialNetworksChecker
   attr_reader :instagram, :twitter, :facebook
 
@@ -16,7 +18,7 @@ class SocialNetworksChecker
   end
 
   def check
-    [instagram, twitter, facebook].map do |social| 
+    [instagram, twitter, facebook].map do |social|
       Thread.new { social.result }
     end.each(&:join)
     self
