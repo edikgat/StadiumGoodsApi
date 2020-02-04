@@ -3,7 +3,6 @@
 require 'grape-swagger'
 
 class Api::V1 < Grape::API
-  prefix :api
   format :json
   content_type :json, 'application/json; charset=UTF-8'
   default_format :json
@@ -31,7 +30,7 @@ class Api::V1 < Grape::API
   add_swagger_documentation(
     api_version: 'v1',
     hide_documentation_path: true,
-    mount_path: 'v1/swagger_doc',
+    mount_path: '/swagger_doc',
     hide_format: true,
     info: {
       title: "Social Networks API",
